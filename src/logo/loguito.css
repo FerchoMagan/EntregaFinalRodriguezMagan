@@ -1,0 +1,12 @@
+ #logoPag{
+    width: 2.5rem;
+    margin-right: 0.5rem;
+    border-radius: 50%;
+
+}
+.numeroCarrito {
+    background-color: red;
+    border-radius: 50%;
+    padding: 0.5rem;
+    margin: o.5rem;
+}

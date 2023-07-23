@@ -1,0 +1,27 @@
+.botoncito {
+    display: flex;
+    flex-flow: row wrap;
+    margin-bottom: 1rem;
+    
+}
+.botoncito2 {
+    
+    display: flex;
+    flex-flow: row wrap;
+    background-color: rgba(0, 0, 50, 0.1);
+   border-radius: 2rem;
+    
+}
+
+.botoncitosEstilos {
+    background-color: #1976d2;
+    border-radius: 50%;
+}
+
+#sumar {
+    margin-left: 1rem;
+}
+
+#restar {
+    margin-right: 1rem;
+}

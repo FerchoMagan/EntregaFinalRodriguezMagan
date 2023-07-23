@@ -1,0 +1,28 @@
+nav {
+    background-color: rgba(15, 15, 121, 0.25);
+    height: 100px;
+    padding:5px 0px 0px 5px;
+    display: flex;
+    flex-flow: row;
+    align-items: center;
+}
+ul {
+    margin:0 ;
+    list-style: none;
+    display: flex;
+}
+
+li:hover {
+    color: red;
+    border-bottom: solid;
+    border-color: grey;
+}
+
+li {
+    padding: 0px 5px 0px 5px;
+     
+}
+#logo{
+    width: 100px;
+}
+
