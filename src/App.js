@@ -4,6 +4,7 @@ import ItemListContainer from "./itemListContainer/itemListContainer";
 import ItemsHardware from "./hardware/ItemsHardware";
 import ItemsSoftware from "./software/ItemsSoftware";
 import Contacto from "./contacto/Contacto"
+import PageNotFound from "./PageNotFound";
 import {BrowserRouter, Routes, Route} from 'react-router-dom';
 
 function App() {
@@ -23,7 +24,7 @@ function App() {
           <Route path="/contactenos" element={<Contacto />} />
           
 
-          <Route path="*" element={<h1>No se encontro la pagina solicitada!!!!!!!</h1>} />
+          <Route path="*" element={<PageNotFound />} />
         </Routes>
       </BrowserRouter>
     </>

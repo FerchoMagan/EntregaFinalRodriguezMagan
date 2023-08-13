@@ -11,8 +11,16 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+#centradoImagen{
+   display: flex; 
+  justify-Content: center;
+}
 
-
+#imagenerror {
+  width: 35rem;
+  height: auto;
+  
+}
 
 .App {
   text-align: center;
