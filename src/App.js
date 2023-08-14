@@ -6,6 +6,7 @@ import ItemsSoftware from "./software/ItemsSoftware";
 import Contacto from "./contacto/Contacto"
 import PageNotFound from "./PageNotFound";
 import {BrowserRouter, Routes, Route} from 'react-router-dom';
+import Footer from "./footer/Footer"
 
 function App() {
 
@@ -13,8 +14,9 @@ function App() {
   
   return (
     <>
+      <div id="topup" />
       <BrowserRouter>
-        <NavBar />
+        <NavBar/>
         <Routes>
           <Route path="/" element={<ItemListContainer/>}/>
           <Route path="/categoria/:categoria" element={<ItemListContainer/>}/>
@@ -22,10 +24,10 @@ function App() {
           <Route path="/hardware" element={<ItemsHardware />} />
           <Route path="/software" element={<ItemsSoftware />} />
           <Route path="/contactenos" element={<Contacto />} />
-          
 
           <Route path="*" element={<PageNotFound />} />
         </Routes>
+        <Footer />
       </BrowserRouter>
     </>
   );

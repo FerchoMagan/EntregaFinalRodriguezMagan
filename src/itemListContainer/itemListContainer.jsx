@@ -18,12 +18,14 @@ function ItemList() {
   useEffect(() => {
     requestProducts();
   }, []);
+  
+  
   requestProducts();
   
   const filteredByCategory = categoria ? products.filter((item) => item.categoria === categoria) : products;
   
   const filteredProducts = filteredByCategory.filter((item) => item.stock > 0);
-
+  
 
   return (
     <div>
