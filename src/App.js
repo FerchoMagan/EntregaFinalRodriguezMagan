@@ -18,7 +18,7 @@ function App() {
   return (
     <>
       <div id="topup" />
-      <cartContext.Provider>
+      <cartContext.Provider value={{ cart: [] }}>
         <BrowserRouter>
           <NavBar/>
           <Routes>
