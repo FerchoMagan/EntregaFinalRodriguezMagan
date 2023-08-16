@@ -7,9 +7,20 @@ import Contacto from "./contacto/Contacto"
 import PageNotFound from "./PageNotFound";
 import {BrowserRouter, Routes, Route} from 'react-router-dom';
 import Footer from "./footer/Footer";
-import { createContext } from "react";
+import { createContext, useState, useContext } from "react";
 
-const cartContext = createContext ({cart: []});
+const cartContext = createContext ({ cart: []});
+
+function CartContextProvider(props) {
+  const [cart, setCart] = useState([]);
+  const {addToCart} = useContext(cartContext);
+
+  return (
+    <cartContext.Provider value={{cart: cart, addToCart}}>
+      {props.children}
+    </cartContext.Provider>
+  )
+}
 
 function App() {
 
@@ -18,7 +29,7 @@ function App() {
   return (
     <>
       <div id="topup" />
-      <cartContext.Provider value={{ cart: [] }}>
+      <CartContextProvider>
         <BrowserRouter>
           <NavBar/>
           <Routes>
@@ -33,7 +44,7 @@ function App() {
           </Routes>
           <Footer />
         </BrowserRouter>
-      </cartContext.Provider>
+      </CartContextProvider>
     </>
   );
 }

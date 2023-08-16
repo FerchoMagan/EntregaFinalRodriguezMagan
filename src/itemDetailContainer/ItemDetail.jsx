@@ -3,7 +3,16 @@ import Typography from '@mui/material/Typography';
 import Contador from '../boton/Boton' 
 import estilo from './ItemDetail.css'
 import {Button} from '@mui/material';
+import { useContext} from 'react';
+import {cartContext} from "../App"
+
+
 const ItemDetail = ({ product }) => {
+  const { addToCart } = useContext(cartContext);
+  function handleAddToCart(clickCount){
+    addToCart(product, clickCount);
+    alert(`Producto agregado al carro, cantidad ${clickCount} `)
+}
   
   return (
     <>
@@ -29,8 +38,8 @@ const ItemDetail = ({ product }) => {
           <img width="400" alt={product.alt} src={product.img} />
           <p><span className='negrita'>Acerca de: </span>{product.descripcion}</p>
           <p><span className='negrita'>Precio: </span>${product.precio}</p>
-          <Contador stock={product.stock} />
-          <Button variant="contained">Agregar al carrito</Button>
+          <Contador stock={product.stock}  />
+          <Button variant="contained" onConfirm={handleAddToCart}>Agregar al carrito</Button>
         </div>
       </div>
     </>
