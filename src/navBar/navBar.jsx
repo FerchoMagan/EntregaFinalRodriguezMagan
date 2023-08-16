@@ -1,3 +1,5 @@
+
+
 import * as React from 'react';
 import MenuIcon from '@mui/icons-material/Menu';
 import { AppBar, Toolbar, Box, Typography, Menu, IconButton, Container, Button, Tooltip, MenuItem,} from '@mui/material';
@@ -130,9 +132,7 @@ function ResponsiveAppBar() {
                <Avatar alt="Carrito" src="/static/images/avatar/2.jpg" />
               </IconButton>
               </Tooltip>
-              <span style={Loguito} className="numeroCarrito">
-                4
-              </span>
+              
             
             <Menu
               sx={{ mt: '45px' }}

@@ -1,28 +1,19 @@
-import {useState, useEffect} from 'react';
-import {getProductData} from '../services/asyncProducts';
+import React, { useState, useEffect } from 'react';
+import { getProductData } from '../services/asyncProducts';
 import ItemDetail from './ItemDetail';
-import {useParams} from 'react-router-dom';
-
+import { useParams } from 'react-router-dom';
 
 function ItemDetailContainer() {
     const [product, setProduct] = useState({});
-    const [loading, setLoading] = useState(true);
-
-    let { id } = useParams();
-
-    async function requestProduct() {
-        const response = await getProductData(id);
-        setProduct(response);
-        setLoading(false); 
-    }
+    const { id } = useParams();
 
     useEffect(() => {
+        async function requestProduct() {
+            const response = await getProductData(id);
+            setProduct(response);
+        }
         requestProduct();
-    }, [requestProduct]);
-
-    if (loading) {
-        return <p>Loading...</p>; 
-    }
+    }, [id]);
 
     return <ItemDetail product={product} />;
 }

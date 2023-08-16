@@ -1,15 +1,21 @@
 /* icono carrito con numero al costado y ubicarlo en la navbar*/
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
-function cartWidget() {
+import { useContext } from 'react';
+import {cartContext} from '../App';
 
-  return (
+function CartWidget() {
+
+const context = useContext(cartContext);
+
+return (
 
     <>
     <ShoppingCartIcon fontSize='large'/>
+    <span> {context.cart.length} </span>
     </>
   );
 
 }
 
 
-export default cartWidget;
+export default CartWidget;
