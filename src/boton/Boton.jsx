@@ -3,7 +3,7 @@ import AddCircleOutlineIcon from '@mui/icons-material/AddCircleOutline';
 import RemoveIcon from '@mui/icons-material/Remove';
 import estiloBoton from './Boton.css'
 
-function Contador({ stock, contador, setContador }) {
+function Contador({stock, contador, setContador }) {
   const sumar = () => {
     if (contador < stock) {
       setContador(contador + 1);

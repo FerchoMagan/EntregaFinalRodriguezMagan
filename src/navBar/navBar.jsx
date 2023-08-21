@@ -2,7 +2,7 @@
 
 import * as React from 'react';
 import MenuIcon from '@mui/icons-material/Menu';
-import { AppBar, Toolbar, Box, Typography, Menu, IconButton, Container, Button, Tooltip, MenuItem,} from '@mui/material';
+import { AppBar, Toolbar, Box, Typography, Menu, IconButton, Container, Button, Tooltip, MenuItem, } from '@mui/material';
 import { Link } from 'react-router-dom';
 import Logo from '../logo/logo.png';
 import Loguito from '../logo/loguito.css';
@@ -35,27 +35,25 @@ function ResponsiveAppBar() {
     <AppBar position="fixed">
       <Container maxWidth="xl">
         <Toolbar disableGutters>
-          <a href="/">
-            <img src={Logo} alt="logo" href="#" id="logoPag" style={Loguito} />
-          </a>
-          <Typography
-            variant="h6"
-            noWrap
-            component="a"
-            href="/"
-            sx={{
-              mr: 2,
-              ml: 2,
-              display: { xs: 'none', md: 'flex' },
-              fontFamily: 'monospace',
-              fontWeight: 700,
-              letterSpacing: '.3rem',
-              color: 'inherit',
-              textDecoration: 'none',
-            }}
-          >
-            Lo de Rulo!
-          </Typography>
+        <Link to="/" style={{ textDecoration: 'none', color: 'inherit', display: 'flex', alignItems: 'center' }}>
+            <img src={Logo} alt="logo" id="logoPag" style={Loguito} />
+            <Typography
+              variant="h6"
+              noWrap
+              component="span"
+              sx={{
+                mr: 2,
+                ml: 2,
+                display: { xs: 'none', md: 'flex' },
+                fontFamily: 'monospace',
+                fontWeight: 700,
+                letterSpacing: '.3rem',
+                color: 'inherit',
+              }}
+            >
+              Lo de Rulo!
+            </Typography>
+          </Link>
 
           <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
             <IconButton
@@ -95,15 +93,16 @@ function ResponsiveAppBar() {
               ))}
             </Menu>
           </Box>
+          <Box sx={{width: 1/2}}  >
+          <Link to="/" style={{ textDecoration: 'none', color: 'inherit', display: 'flex', alignItems: 'center' }}>
           <Typography
             variant="h5"
-            noWrap
+            Wrap
             component="a"
-            href=""
+
             sx={{
-              mr: 2,
               display: { xs: 'flex', md: 'none' },
-              flexGrow: 1,
+              flexGrow: 5,
               fontFamily: 'monospace',
               fontWeight: 700,
               letterSpacing: '.3rem',
@@ -113,6 +112,8 @@ function ResponsiveAppBar() {
           >
             Lo de Rulo!
           </Typography>
+          </Link>
+          </Box >
           <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
             {pages.map((page) => (
               <Button
@@ -127,13 +128,13 @@ function ResponsiveAppBar() {
           </Box>
 
           <Box sx={{ mr: 2.5, flexGrow: 0 }}>
-          <Tooltip title="Carrito">
+            <Tooltip title="Carrito">
               <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
-               <Avatar alt="Carrito" src="/static/images/avatar/2.jpg" />
+                <Avatar alt="Carrito" src="/static/images/avatar/2.jpg" />
               </IconButton>
-              </Tooltip>
-              
-            
+            </Tooltip>
+
+
             <Menu
               sx={{ mt: '45px' }}
               id="menu-appbar"
