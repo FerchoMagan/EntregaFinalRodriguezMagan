@@ -3,7 +3,7 @@ import React, { useState, useEffect } from 'react';
 import { Typography, Grid } from '@mui/material';
 import getData from '../services/asyncProducts';
 import Item from '../Items/Items'
-import {useParams} from 'react-router-dom';
+import {useParams,} from 'react-router-dom';
 
 
 function ItemList() {
@@ -13,6 +13,7 @@ function ItemList() {
   async function requestProducts() {
     const response = await getData();
     resProducts(response);
+    
 
   }
   useEffect(() => {
@@ -20,7 +21,7 @@ function ItemList() {
   }, []);
   
   
-  requestProducts();
+  
   
   const filteredByCategory = categoria ? products.filter((item) => item.categoria === categoria) : products;
   
