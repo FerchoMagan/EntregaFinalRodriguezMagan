@@ -7,19 +7,24 @@ import Contacto from "./contacto/Contacto"
 import PageNotFound from "./PageNotFound";
 import {BrowserRouter, Routes, Route} from 'react-router-dom';
 import Footer from "./footer/Footer";
-import { createContext, useState, useContext } from "react";
+import { createContext, useState } from "react";
 
 const cartContext = createContext ({ cart: []});
 
 function CartContextProvider(props) {
   const [cart, setCart] = useState([]);
-  const {addToCart} = useContext(cartContext);
+
+  
+  const addToCart = (product, quantity) => {
+    const updatedCart = [...cart, { product, quantity }];
+    setCart(updatedCart);
+  };
 
   return (
-    <cartContext.Provider value={{cart: cart, addToCart}}>
+    <cartContext.Provider value={{ cart: cart, addToCart: addToCart }}>
       {props.children}
     </cartContext.Provider>
-  )
+  );
 }
 
 function App() {
